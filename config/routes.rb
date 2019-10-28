@@ -5,13 +5,17 @@ Rails.application.routes.draw do
   
   get "/", to: "pages#home", as: "root"
   get "/products", to: "products#index", as: "products"
-  post "/products", to: "products#create"
+  get "/products/new", to:"products#new", as: "new_product" #shows form for creating new product
+  post "/products", to: "products#create" #create the new product
   
-  get "/products/new", to:"products#new", as: "new_product"
-  get "/products/:id", to: "products#show", as: "product"
-  put "/products/:id", to:"products#update"
+  
+  get "/products/:id", to: "products#show", as: "product" #show single product
+  get "/products/:id/edit", to:"products#edit", as: "edit_product" #shows form to edit a product
+
+  put "/products/:id", to:"products#update" # making the update to the product
   patch "/products/:id", to:"products#update"
-  get "/products/:id/edit", to:"products#edit", as: "edit_product"
+  
+  
   #for stripe payment 
   get "/payments/success", to: "payments#success", as: "success_payment"
   post "/payments/webhook", to: "payments#webhook"
