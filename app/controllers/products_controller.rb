@@ -5,11 +5,11 @@ class ProductsController < ApplicationController
     before_action :set_user_product, only: [:edit, :update]
 
     def index
-        # if params[:search] && !params[:search].empty?
-        #     @products = product.where(name: params[:search])
-        # else
-        #     @products = product.all
-        # end
+        if params[:search] && !params[:search].empty?
+            @products = product.where(name: params[:search])
+        else
+            @products = product.all
+        end
     end
 
     def show
