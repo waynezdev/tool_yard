@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_one :address       
   has_many :product
   has_one :seller
+  enum account_type: {normal: 0, seller: 1}
 end
