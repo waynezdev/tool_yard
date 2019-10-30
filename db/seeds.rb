@@ -8,26 +8,26 @@
 
 #create users
 
-# for i in 1..10
-#     user = User.create(
-#         account_type: 1,
-#         name: Faker::Name.name,
-#         email: Faker::Internet.email,
-#         mobile: "04#{rand(0..9)}#{rand(0..9)} #{rand(100..999)} #{rand(100..999)}",
-#         password: "123123"
+for i in 1..10
+    user = User.create(
+        account_type: 1,
+        name: Faker::Name.name,
+        email: Faker::Internet.email,
+        mobile: "04#{rand(0..9)}#{rand(0..9)} #{rand(100..999)} #{rand(100..999)}",
+        password: "123123"
 
-#     )
-# end
+    )
+end
 
 # create sellers
 
-# for i in 1..10
-#     seller = Seller.create(
-#         user_id: i,
-#         company_name: Faker::Company.name,
-#         ABN: Faker::Company.australian_business_number
-#     )
-# end
+for i in 1..10
+    seller = Seller.create(
+        user_id: i,
+        company_name: Faker::Company.name,
+        ABN: Faker::Company.australian_business_number
+    )
+end
 
 #create addresses
 
@@ -46,44 +46,44 @@ end
 
 
 
-# brands = [
-#     { name: "Hilti"},
-#     { name: "Makita"},
-#     { name: "Bosch"},
-#     { name: "Dewalt"},
-#     { name: "AEG"},
-#     { name: "Milwaukii"},
-#     { name: "Panasonic"},
-#     { name: "Lucius Fox"},
-# ]
+brands = [
+    { name: "Hilti"},
+    { name: "Makita"},
+    { name: "Bosch"},
+    { name: "Dewalt"},
+    { name: "AEG"},
+    { name: "Milwaukii"},
+    { name: "Panasonic"},
+    { name: "Lucius Fox"},
+]
 
-# for i in brands
-# Brand.create(i)
-# end
+for i in brands
+Brand.create(i)
+end
 
-# products = [
-#     { title: "Miter Saw"},
-#     { title: "Table Saw"},
-#     { title: "Cordless Drill"},
-#     { title: "Reciprocating Saw"},
-#     { title: "Circular Saw"},
-#     { title: "Jigsaw"},
-#     { title: "Random Orbital Sander"},
-#     { title: "Paint Sprayer"},
-#     { title: "Air Compressor"},
-#     { title: "Hammer Drill"},
-#     { title: "Wood Router"}
-# ]
+products = [
+    { title: "Miter Saw"},
+    { title: "Table Saw"},
+    { title: "Cordless Drill"},
+    { title: "Reciprocating Saw"},
+    { title: "Circular Saw"},
+    { title: "Jigsaw"},
+    { title: "Random Orbital Sander"},
+    { title: "Paint Sprayer"},
+    { title: "Air Compressor"},
+    { title: "Hammer Drill"},
+    { title: "Wood Router"}
+]
 
 #create products
 
-# for i in 1..30
-#     product = Product.create(
-#         title: "#{products.sample[:title]} #{Faker::Games::LeagueOfLegends.champion}",
-#         brand_id: rand(1..9),
-#         description: Faker::Lorem.paragraph,
-#         price: rand(50000..100000),
-#         state: rand(0..1), 
-#         user_id: 1
-#     )
-# end
+for i in 1..30
+    product = Product.create(
+        title: "#{products.sample[:title]} #{Faker::Games::LeagueOfLegends.champion}",
+        brand_id: rand(1..8),
+        description: Faker::Lorem.paragraph,
+        price: rand(50000..100000),
+        condition: rand(0..1), 
+        user_id: rand(1..10)
+    )
+end
