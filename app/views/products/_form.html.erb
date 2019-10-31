@@ -1,0 +1,47 @@
+<%#= milkshake.errors.any? %>
+
+<%# if milkshake.errors.any? %>
+<p>wayne</p>
+    <%# for error in milkshake.errors.full_messages %>
+        <p><%#= error %></p>
+<p>wayne</p>
+    <%# end %>
+<%# end %>
+
+<%= form_with model: @product, local: true do |form| %>
+
+    <div>
+        <%= form.label :title%>
+        <%= form.text_field :title%>
+    </div>
+
+    <div>
+        <%= form.label :description%>
+        <%= form.text_field :description%>
+    </div>
+
+    <div>
+        <%= form.label :price, "Price (in cents)"%>
+        <%= form.number_field :price, min: 0%>
+    </div>
+
+    
+
+    <div>
+        <%= form.label :condition, "Condition of tool" %>
+        <div>
+        <%= radio_button_tag(:used, "child") %>
+        <%= label_tag(:age_child, "Used") %>
+        <%= radio_button_tag(:brand_new, "adult") %>
+        <%= label_tag(:age_adult, "Brand new") %>
+        </div>
+    
+    </div>
+
+    <div>
+        <%= form.submit :pic%>
+    
+    </div>
+
+
+<% end %>
