@@ -15,9 +15,11 @@
             
                 <div>
                     <%#= image_tag product.pic if product.pic.attached? %>
+                    <h3><%= product.brand[:name] %></h3>
                     <h2><%= product.title %></h2>
                     <p><%= number_to_currency(product.price / 100.0) %></p>
                 </div>
+                <br/>
             <% end %>
         <% end %>
 
