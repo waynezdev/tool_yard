@@ -1,18 +1,21 @@
-<%#= milkshake.errors.any? %>
+<% if @product.errors.any? %>
 
-<%# if milkshake.errors.any? %>
-<p>wayne</p>
-    <%# for error in milkshake.errors.full_messages %>
-        <p><%#= error %></p>
-<p>wayne</p>
-    <%# end %>
-<%# end %>
+    <% for error in @product.errors.full_messages %>
+        <p><%= error %></p>
+
+    <% end %>
+<% end %>
 
 <%= form_with model: @product, local: true do |form| %>
 
     <div>
         <%= form.label :title%>
         <%= form.text_field :title%>
+    </div>
+
+    <div>
+        <%= form.label :brand%>
+        <%= form.text_field :brand_id %>
     </div>
 
     <div>
@@ -25,21 +28,17 @@
         <%= form.number_field :price, min: 0%>
     </div>
 
-    
-
     <div>
-        <%= form.label :condition, "Condition of tool" %>
-        <div>
-        <%= radio_button_tag(:used, "child") %>
-        <%= label_tag(:age_child, "Used") %>
-        <%= radio_button_tag(:brand_new, "adult") %>
-        <%= label_tag(:age_adult, "Brand new") %>
-        </div>
-    
+        <%= form.label :condition%>
+        <%= form.select(:condition, [["New", "brand_new"], ["Used", "used"]]) %>
+
+
+        
     </div>
 
+
     <div>
-        <%= form.submit :pic%>
+        <%= form.submit%>
     
     </div>
 

@@ -53,8 +53,48 @@ class ProductsController < ApplicationController
     end
 
     def create
-        @product = Product.create
-       
+        whitelisted_params = params.require(:product).permit(:title, :brand_id, :description, :price, :condition)
+        # @product = Product.create(whitelisted_params)  is the same as
+        # @product = current_user.products.create(whitelisted_params)
+        
+        @product = current_user.products.create(product_params)
+
+        if @product.errors.any?
+           
+            render "new"
+
+        else        
+            redirect_to product_path(@product)
+
+        end
+    end
+
+    private
+    def product_params
+
+        params.require(:product).permit(:title, :brand_id, :description, :price, :pic, :condition)
+
+    end
+
+    def set_product
+
+        @product = Product.find(params[:id]) 
+
+    end
+
+    def set_user_product
+
+        # @products = Product.find(params[:id])
+
+        @products = current_user.products.find_by_id(params[:id])
+
+        # if @product.user_id != current_user.id
+        if @product == nil
+
+            redirect_to products_path
+        end
+
+
     end
 
   
