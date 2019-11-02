@@ -3,4 +3,40 @@
 
 <%= @product.to_json %>
 
-<%= link_to "edit", edit_product_path(@product) if current_user.id == @product.user_id %>
+<div>
+
+
+
+</div>
+
+<div>
+<%= image_tag "drill.jpg", alt:"power drill" %>
+<h2><%= @product.title %> <%= link_to "edit", edit_product_path(@product) if current_user.id == @product.user_id %></h2>
+<h1>brand:<%= @product.brand[:name] %></h1>
+
+<h2>Description: <%=  @product.description %> </h2>
+
+
+</div>
+
+
+<div>
+--------------link to buy button---------------
+<button data-stripe="payment">Buy <%= number_to_currency(@product.price / 100.0)%></button>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+  document
+    .querySelector("[data-stripe='payment']")
+    .addEventListener("click", () => {
+      const stripe = Stripe(
+        "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+      );
+
+      stripe.redirectToCheckout({
+        sessionId: "<%= @session_id %>"
+      });
+    });
+</script>

@@ -13,10 +13,13 @@ class ProductsController < ApplicationController
     end
 
     def show
+      
 
         @product = Product.find(params[:id])
         # @product = current_user.products.find(params[:id])
         @products = Product.all
+
+        
 
         # session = Stripe::Checkout::Session.create(
         #     payment_method_types: ['card'],
