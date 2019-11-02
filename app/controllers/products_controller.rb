@@ -21,6 +21,17 @@ class ProductsController < ApplicationController
 
         
 
+        if @product.condition == "brand_new"
+            @product_condition = "New"
+
+        elsif @product_condition == "used"
+
+            @product_condition = "Used"
+
+        end
+
+        
+
         # session = Stripe::Checkout::Session.create(
         #     payment_method_types: ['card'],
         #     customer_email: current_user.email,
