@@ -14,8 +14,21 @@
     </div>
 
     <div>
-        <%= form.label :"Product brand"%>
-        <%= form.text_field :brand_id %>
+        <%#= form.label :"Product brand"%>
+        <%#= form.text_field :brand_id %>
+
+        <%= form.label :"Product brand" %>
+        <%= form.select(:brand_id, [
+            ["Hili", "1"], 
+            ["Mikita", "2"], 
+            ["Bosch", "3"], 
+            ["Dewalt", "4"], 
+            ["AEG", "5"], 
+            ["Milwaukii", "6"], 
+            ["Panasonic", "7"], 
+            ["Lucius Fox", "8"]
+            ]) %>
+
     </div>
 
     <div>
@@ -31,8 +44,6 @@
     <div>
         <%= form.label :condition%>
         <%= form.select(:condition, [["New", "brand_new"], ["Used", "used"]]) %>
-
-
         
     </div>
 
