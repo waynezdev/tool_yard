@@ -81,7 +81,41 @@ class ProductsController < ApplicationController
             redirect_to product_path(@product)
 
         end
+
+        
     end
+
+    def edit
+        @product = Product.find(params[:id])
+        @products = Product.all
+      
+    end
+
+    def update
+       
+        if @product.update(produt_params)
+            redirect_to product_match[:id]
+
+        else
+            @products = Product.all
+            render "edit"
+
+        end
+
+    end
+
+    def delete
+
+        @product = Product.find(params[:id])
+        @products.destroy
+
+        puts "product deleted successfully"
+
+        redirect_to products_path
+
+    end
+
+
 
     private
     def product_params

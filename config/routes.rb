@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   put "/products/:id", to:"products#update" # making the update to the product
   patch "/products/:id", to:"products#update"
+
+  delete "/products/:id/", to:"products#destroy" #delete product
   
   
   #for stripe payment 
