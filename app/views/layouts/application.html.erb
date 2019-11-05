@@ -11,6 +11,28 @@
 
   <body>
 
+  <p class="navbar-text float-right">
+    <% if user_signed_in? %>
+      
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <%= link_to "Create Products", new_product_path, :class => 'navbar-link' %>
+      <%= link_to "Home", root_path, :class => 'navbar-link'  %>
+      Logged in as <strong><%= current_user.email %></strong>.
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <%= link_to "Home", root_path, :class => 'navbar-link'  %>
+    <% end %>
+
+    <%# search bar%>
+    <form action="<%= products_path %>" method="GET">
+      <input type="search" name="search" />
+
+      <input type="submit" value="Searchasdf tool"/>
+    </form>
+  </p>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

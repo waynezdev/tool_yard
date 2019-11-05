@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
         else
             @products = Product.all
         end
+
+        
     end
 
     def show
@@ -67,7 +69,7 @@ class ProductsController < ApplicationController
     end
 
     def create
-        whitelisted_params = params.require(:product).permit(:title, :brand_id, :description, :price, :condition)
+        whitelisted_params = params.require(:product).permit(:title, :brand_id, :description, :price, :condition, :picture)
         # @product = Product.create(whitelisted_params)  is the same as
         # @product = current_user.products.create(whitelisted_params)
         
@@ -77,12 +79,13 @@ class ProductsController < ApplicationController
            
             render "new"
 
-        else        
+        else   
+            flash[:message] = "Product uploaded successfully"
+                
             redirect_to product_path(@product)
 
         end
 
-        
     end
 
     def edit
@@ -120,8 +123,9 @@ class ProductsController < ApplicationController
     private
     def product_params
 
-        params.require(:product).permit(:title, :brand_id, :description, :price, :condition)
-
+        product = params.require(:product).permit(:title, :brand_id, :description, :price, :condition, :picture)
+        product[:price] = 100.0*product[:price].to_i
+        product
     end
 
     def set_product

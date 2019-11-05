@@ -1,0 +1,24 @@
+<h2>Register new seller</h2>
+
+<%= form_with model: @seller,url: create_seller_path, local: true do |f|%>
+
+  <div class="field">
+    <%= f.label :"Company name" %><br />
+    <%= f.text_field :company_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ABN %><br />
+    <%= f.text_field :ABN %>
+  </div>
+    
+ 
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+ 
+
+
+<% end %>
+

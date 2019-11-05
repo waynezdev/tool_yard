@@ -1,8 +1,30 @@
-<h2>Sign up</h2>
+<h2>Register</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div class="field">
+    <%= f.label :"Account type" %><br />
+    
+      <%# radio buttons for account type - normal user or seller account%>
+        <%= f.radio_button(:account_type, "normal") %>
+        <%= label_tag(:account_type, "I want to be a VIP buyer") %>
+        <%= f.radio_button(:account_type, "seller") %>
+        <%= label_tag(:account_type, "I want to be a tool seller") %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :"Full name" %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Mobile %><br />
+    <%= f.text_field :mobile, autofocus: true, autocomplete: "mobile" %>
+  </div>
+    
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -24,6 +46,9 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+ 
+
+
 <% end %>
 
 <%= render "devise/shared/links" %>

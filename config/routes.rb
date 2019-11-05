@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get "/products/new", to:"products#new", as: "new_product" #shows form for creating new product
   post "/products", to: "products#create" #create the new product
   
-  
   get "/products/:id", to: "products#show", as: "product" #show single product
   get "/products/:id/edit", to:"products#edit", as: "edit_product" #shows form to edit a product
 
@@ -16,7 +15,9 @@ Rails.application.routes.draw do
   patch "/products/:id", to:"products#update"
 
   delete "/products/:id/", to:"products#destroy" #delete product
-  
+
+  get "/user/seller_sign_up", to:"sellers#new", as:"new_seller"
+  post "/user/seller_sign_up", to: "sellers#create", as:"create_seller"
   
   #for stripe payment 
   get "/payments/success", to: "payments#success", as: "success_payment"
