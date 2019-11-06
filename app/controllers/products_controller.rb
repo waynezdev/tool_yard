@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-    before_action :authenticate_user!
+    # before_action :authenticate_user!, only: [:edit, :update, :delete, :create]
     # before_action :set_product, only: [:show]
     # before_action :set_user_product, only: [:edit, :update]
 
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
       
 
         @product = Product.find(params[:id])
-        # @product = current_user.products.find(params[:id])
+        #@product = current_user.products.find(params[:id])
         @products = Product.all
 
         
@@ -90,14 +90,17 @@ class ProductsController < ApplicationController
 
     def edit
         @product = Product.find(params[:id])
-        @products = Product.all
+        # @products = Product.all
       
     end
 
     def update
+
+        @product = Product.find(params[:id])
+      
        
-        if @product.update(produt_params)
-            redirect_to product_match[:id]
+        if @product.update(product_params)
+            redirect_to product_path(params[:id])
 
         else
             @products = Product.all
@@ -107,12 +110,12 @@ class ProductsController < ApplicationController
 
     end
 
-    def delete
+    def destroy
 
         @product = Product.find(params[:id])
-        @products.destroy
+        @product.destroy
 
-        puts "product deleted successfully"
+        flash[:message] = "Product deleted successfully"
 
         redirect_to products_path
 
