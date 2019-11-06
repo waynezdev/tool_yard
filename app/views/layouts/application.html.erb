@@ -9,33 +9,95 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<body>
 
 
-  <p class="navbar-text float-right">
-  
-    <% if user_signed_in? %>
-      
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <%= link_to "Create Products", new_product_path, :class => 'navbar-link' %>
-      <%= link_to "All Products", products_path, :class => 'navbar-link' %>
-      <%= link_to "Home", root_path, :class => 'navbar-link'  %>
-      Logged in as <strong><%= current_user.email %></strong>.
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-      <%= link_to "Home", root_path, :class => 'navbar-link'  %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+
+ 
+  <div class="collapse navbar-collapse" id="navbarNav">
+
+  <% if user_signed_in? %>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        
+        <%= link_to "Home", root_path, class: 'nav-link'  %>
+      </li>
+      <li class="nav-item">
+        
+        <%= link_to "All Products", products_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        
+        <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link' %> 
+
+      </li>
+
+      <li class="nav-item">
+
+        <%= link_to "Create Products", new_product_path, class: 'nav-link' %>
+      </li>
+
+       <li class="nav-item">
+        
+        
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link'  %>
+        
+      </li>
+
+      <li class="nav-item">
+         
+         Logged in as <%= current_user.email %>
+
+      </li>
+
+ 
+    </ul>
+
+     <% else %>
+
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        
+        <%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %> 
+
+      </li>
+
+      <li class="nav-item active">
+        
+        <%= link_to "Login", new_user_session_path, class: 'nav-link' %>
+
+      </li>
+
+      <li class="nav-item active">
+        
+        <%= link_to "Home", root_path, class: 'nav-link' %>
+      </li>
+
+    </ul>
     <% end %>
+  </div>
 
-    <%# search bar%>
-    <form action="<%= products_path %>" method="GET">
-      <input type="search" name="search" />
 
-      <input type="submit" value="Searchasdf tool"/>
-    </form>
-  </p>
+<%# search bar %>
+
+  <form class="form-inline" action="<%= products_path %>" method="GET" >
+    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search products" aria-label="Search"/>
+
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+<%# sandwaich menu when browser shrinks %>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
 </nav>
+
+
+
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
