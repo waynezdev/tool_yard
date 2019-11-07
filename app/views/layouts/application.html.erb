@@ -12,8 +12,8 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ff8c42;" >
+  <a class="navbar-brand" href="#">ToolYard</a>
 
  
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -83,10 +83,12 @@
 <%# search bar %>
 
   <form class="form-inline" action="<%= products_path %>" method="GET" >
-    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search products" aria-label="Search"/>
+    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search tools" aria-label="Search"/>
 
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #ffe81e;">Search Tools</button>
   </form>
+
+
 
 <%# sandwaich menu when browser shrinks %>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
