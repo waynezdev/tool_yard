@@ -16,6 +16,20 @@ class ProductsController < ApplicationController
 
     def show
       
+        session = Stripe::Checkout::Session.create(
+          payment_method_types: ['card'],
+          line_items: [{
+            name: 'T-shirt',
+            description: 'Comfortable cotton t-shirt',
+            images: ['https://example.com/t-shirt.png'],
+            amount: 500,
+            currency: 'aud',
+            quantity: 1,
+          }],
+          success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
+          cancel_url: 'https://example.com/cancel',
+        )
+
 
         @product = Product.find(params[:id])
         #@product = current_user.products.find(params[:id])
@@ -127,7 +141,8 @@ class ProductsController < ApplicationController
     def product_params
 
         product = params.require(:product).permit(:title, :brand_id, :description, :price, :condition, :picture)
-        product[:price] = 100.0*product[:price].to_i
+        product[:price] = product[:price].to_f*100.0
+        # params[:product][:price] = (params[:product][:price].to_f * 100).to_i
         product
     end
 
