@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   
   #for stripe payment 
   get "/payments/success", to: "payments#success", as: "success_payment"
-  post "/payments/webhook", to: "payments#webhook"
+  post "/payments/webhook", to: "payments#webhook", as: "order"
 
 end

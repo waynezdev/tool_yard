@@ -38,16 +38,15 @@
 
 <div>
 --------------link to buy button---------------
-<button data-stripe="payment">Buy <%= number_to_currency(@product.price / 100.0)%></button>
+<button data-stripe="buy">Buy <%= number_to_currency(@product.price / 100.0)%></button>
 </div>
 
 <script src="https://js.stripe.com/v3/"></script>
 
 <script>
-  const stripe = Stripe("<%= Rails.application.credentials.dig(:stripe, :public)%>");
-  
+    
   document
-    .querySelector("[data-stripe='payment']")
+    .querySelector("[data-stripe='buy']")
     .addEventListener("click", () => {
       const stripe = Stripe(
         "<%= Rails.application.credentials.dig(:stripe, :public) %>"

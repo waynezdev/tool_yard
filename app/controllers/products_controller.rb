@@ -47,6 +47,7 @@ class ProductsController < ApplicationController
 
                 }
             ],
+            #what data do I want to come back to me for the order
             payment_intent_data: {
                 metadata: {
                     user_id: current_user.id,
