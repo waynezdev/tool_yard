@@ -16,21 +16,7 @@ class ProductsController < ApplicationController
 
     def show
       
-        session = Stripe::Checkout::Session.create(
-          payment_method_types: ['card'],
-          line_items: [{
-            name: 'T-shirt',
-            description: 'Comfortable cotton t-shirt',
-            images: ['https://example.com/t-shirt.png'],
-            amount: 500,
-            currency: 'aud',
-            quantity: 1,
-          }],
-          success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
-          cancel_url: 'https://example.com/cancel',
-        )
-
-
+     
         @product = Product.find(params[:id])
         #@product = current_user.products.find(params[:id])
         @products = Product.all
@@ -48,32 +34,32 @@ class ProductsController < ApplicationController
 
         
 
-        # session = Stripe::Checkout::Session.create(
-        #     payment_method_types: ['card'],
-        #     customer_email: current_user.email,
-        #     line_items: [
-        #         {
-        #             name: @product.title,
-        #             description: @product.description,
-        #             amount: @product.price,
-        #             currency: "aud",
-        #             quantity: 1,
+        session = Stripe::Checkout::Session.create(
+            payment_method_types: ['card'],
+            customer_email: current_user.email,
+            line_items: [
+                {
+                    name: @product.title,
+                    description: @product.description,
+                    amount: @product.price,
+                    currency: "aud",
+                    quantity: 1,
 
-        #         }
-        #     ],
-        #     payment_intent_data: {
-        #         metadata: {
-        #             user_id: current_user.id,
-        #             product_id: @product.id
-        #         }
+                }
+            ],
+            payment_intent_data: {
+                metadata: {
+                    user_id: current_user.id,
+                    product_id: @product.id
+                }
 
-        #     },
-        #     success_url: "#{root_url}payments/success?userId=#{current_user.id}&productId=#{@product.id}",
-        #     cancel_url: "#{root_url}products/#{@product.id}"
-        # )
+            },
+            success_url: "#{root_url}payments/success?userId=#{current_user.id}&productId=#{@product.id}",
+            cancel_url: "#{root_url}products/#{@product.id}"
+        )
 
-        # @session_id = session.id
-        # @public_key = Rails.application.credentials.dig(:stripe, :public_key)
+        @session_id = session.id
+        @public_key = Rails.application.credentials.dig(:stripe, :public_key)
     end
 
     def new
