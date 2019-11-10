@@ -10,7 +10,7 @@ class PaymentsController < ApplicationController
     def webhook
         strip_transaction_id = params[:data][:object][:payment_intent]
         payment = Stripe::PaymentIntent.retrieve(payment_id)
-        product_id = payment.metadata.fish_id
+        product_id = payment.metadata.product_id
         user_id = payment.metadata.user_id
 
 
