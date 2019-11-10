@@ -1,6 +1,6 @@
 # Two sided Marketplace - ToolYard
 
-
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/toolyard_logo.PNG)
 
 ## <u>Table of content</u>
 
@@ -74,7 +74,7 @@ The Initial research was done around a few areas of interest.
 - Used tools
 
 
-![keyword search volume](C:\projects\Two_sided_marketplace\keyword_research01.PNG)
+![keyword search volume](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/keyword_research01.PNG)
 
 
 
@@ -155,11 +155,11 @@ I generated a mood board to set the overall direction of how the website will lo
 
 **Pintrest** was used and key words such as **"tools", "power tools", "tool sets"** etc were used to generate the following board
 
-![](C:\projects\Two_sided_marketplace\pintrest_board.PNG)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/pintrest_board.PNG)
 
-![pintrest_board02](C:\projects\Two_sided_marketplace\pintrest_board02.PNG)
+![pintrest_board02](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/pintrest_board02.PNG)
 
-![pintrest_board03](C:\projects\Two_sided_marketplace\pintrest_board03.PNG)
+![pintrest_board03](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/pintrest_board03.PNG)
 
 
 
@@ -167,25 +167,29 @@ Other app **UI examples** were also used to inspire my design. The UI I like mos
 
 
 
-![](C:\projects\Two_sided_marketplace\mobile_UXUI_example.PNG)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/mobile_UXUI_example.PNG)
 
-![taxi_app_example](C:\projects\Two_sided_marketplace\taxi_app_example.jpg)
+![taxi_app_example](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/taxi_app_example.jpg)
 
 ### Colour theme
 
 From the mood board and researching similar websites there seems to be a consistent color them of yellow, orange and red. These colors are widely used in construction for safety reasons and to be more visible. This color scheme will be familiar to target users of trade professionals and consumers as well. 
 
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/color_scheme.PNG)
 
+
+
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/color_scheme_cooler.PNG)
 
 ### Wire frames
 
-![](C:\projects\Two_sided_marketplace\wireframes\New Mockup 1.png)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/wireframes/New%20Mockup%201.png)
 
-![New Mockup 2](C:\projects\Two_sided_marketplace\wireframes\New Mockup 2.png)
+![New Mockup 2](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/wireframes/New%20Mockup%202.png)
 
-![New Mockup 3](C:\projects\Two_sided_marketplace\wireframes\New Mockup 3.png)
+![New Mockup 3](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/wireframes/New%20Mockup%203.png)
 
-![New Mockup 4](C:\projects\Two_sided_marketplace\wireframes\New Mockup 4.png)
+![New Mockup 4](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/wireframes/New%20Mockup%204.png)
 
 
 
@@ -193,7 +197,7 @@ From the mood board and researching similar websites there seems to be a consist
 
 ### ERD from wireframe
 
-![](C:\projects\Two_sided_marketplace\ToolYard ER Diagram.png)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/ToolYard%20ER%20Diagram.png)
 
 ### Database relation
 
@@ -544,7 +548,7 @@ This logic will be written in the code to check valid ABN so at the time of the 
 
 This feature will display the most searched tool on the marketplace. When a tool is searched by most users it will be displayed in this section on the home page. 
 
-![](C:\projects\Two_sided_marketplace\topsearch.PNG)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/topsearch.PNG)
 
 This feature will make it more efficient for most users because they would be looking for the same top searches as other users. It will make the UX even faster.
 
@@ -554,19 +558,19 @@ This feature will make it more efficient for most users because they would be lo
 
 When a seller created a product, in the product show page it will have the "edit" and "delete" link. When other buyers or sellers see the same page it will only show the buy button. 
 
-![](C:\projects\Two_sided_marketplace\loggedin.PNG)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/loggedin.PNG)
 
 
 
 
 
-![](C:\projects\Two_sided_marketplace\loggedin_normal_user.PNG)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/loggedin_normal_user.PNG)
 
 When a user is not signed in they will be not allowed to see any products and will be redirected to see the log in page or they need to sign up.
 
 **Image upload capability**
 
-![](C:\projects\Two_sided_marketplace\create_product.PNG)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/create_product.PNG)
 
 
 
@@ -596,7 +600,7 @@ Each product needs to have an image but if the seller does not have an image yet
 
 ### Site map
 
-### ![](C:\projects\Two_sided_marketplace\Toolyard Site Map.png)
+### ![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/Toolyard%20Site%20Map.png)
 
 ### Tech stack
 
@@ -652,15 +656,15 @@ Trello was used to manage the stages of the tasks. It is easy to add new task to
 
 I also started using a issue log to record the issues encountered during the development process and record the solutions used. This will also help future projects development but due to lack of time and lack of streamline process, the issue log was not well used and not all issues got recorded.
 
-![trello01](C:\projects\Two_sided_marketplace\trello_screenshots\trello01.PNG)
+![trello01](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/trello_screenshots/trello01.PNG)
 
-![trello02](C:\projects\Two_sided_marketplace\trello_screenshots\trello02.PNG)
+![trello02](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/trello_screenshots/trello02.PNG)
 
-![trello03](C:\projects\Two_sided_marketplace\trello_screenshots\trello03.PNG)
+![trello03](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/trello_screenshots/trello03.PNG)
 
-![trello04](C:\projects\Two_sided_marketplace\trello_screenshots\trello04.PNG)
+![trello04](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/trello_screenshots/trello04.PNG)
 
-![trello05](C:\projects\Two_sided_marketplace\trello_screenshots\trello05.PNG)
+![trello05](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/trello_screenshots/trello05.PNG)
 
 
 
@@ -707,7 +711,7 @@ end
 
 
 
-![](C:\projects\Two_sided_marketplace\issues_log01.PNG)
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/issues_log01.PNG)
 
 ### Coding standards
 
@@ -722,7 +726,10 @@ end
 
 
 
-**End of document**
+**End of document** 
+
+**Thank you for shopping at ToolYard**
 
 ------
 
+![](https://raw.githubusercontent.com/waynezdev/tool_yard/master/docs/tpplyard_shoppingbag.PNG)
